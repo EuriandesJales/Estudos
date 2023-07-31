@@ -1,6 +1,2 @@
- git init 
- git add README.md 
- git commit -m "first commit" 
- git branch -M main 
- git remote add origin  https://github.com/EuriandesJales/Estudos.git 
- git push - sua origem principal 
+Pegando Noticias Atuais de plataformas de Noticias
+exibindo-as no Terminal
