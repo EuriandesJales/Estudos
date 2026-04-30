@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Estilização do cabeçalho */
+header {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza o conteúdo */
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgba(0, 139, 253, 0.774);
+    color: black;
+    padding: 10px;
+    border: 2px solid rgb(0, 183, 255);
+    position: relative; /* Permite posicionar a logo de forma independente */
+    h1{
+        text-transform: bold;
+        font-size: 36px;
+        
+    }
+}
+
+/* Container do título e da logo */
+.header-content {
+    display: flex;
+    justify-content: center; /* Mantém o título no centro */
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Estilização da logo */
+.logo {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px; /* Posiciona a logo no canto direito */
+    top: -50px; /* Posiciona a logo no canto superior */
+}
+
+/* Estilização do menu */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Mantém os itens do menu em linha */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo_linguagem{
+    width: 200px;
+    height: auto;
+}

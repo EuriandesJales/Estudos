@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ola Jurandy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+
+    <style>
+       body {
+            background-color: #121212; /* Um preto levemente mais suave */
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+            max-width: 900px; /* Evita que o texto fique largo demais em telas grandes */
+            margin: 0 auto;
+        }
+        /* Ajuste opcional para o bloco não ficar colado nas bordas */
+        pre {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introdução a sistemas Abertos</h1>
+    <h2>Exercícios: Usuários e grupos locais no Linux</h2>
+
+    <h3>O que é o Path?</h1>
+        <p>Se refere a caminho, ese que é o caminho para os binarios do  terminal, em outras palavra caminho para executaveis que são chamados por o terminal,
+            é aqui estamos nós referindo a qualquer comando, pois todo comando no terminal nada mais é do que um script de código, desta forma, qualquer software adicionado ao sistema deverar ter anexado
+            ao path um executavel para que o mesmo possa ser chamado e executado.
+        </p>
+        <h4 style="color: #ff4d4d;">ATENÇÃO:</h4>
+        <p>O path jamais deverar ser alterado, podemos anexar novos paths modificando o arquivo de configurações do terminal <bold>.bashrc ou o .zshrc</bold> dependendo do terminal que você usa, mas modificar o path,
+            resultará em uma quebra do sistema operacional, onde ele não sabera onde esta os executaveis mesmo que se renomeio ou copie tudo, futuros softwares sempre estarão colocando seus executaveis dentro do path padrão
+            /bin/bash
+        </p>
+        
+        <h3>Como Anexar um path?</h3>
+        <p>basta abrir o arquivo de configurações do terminal com o seu editor preferido vim, nano ou micro e adicionar <pre><code class="language-javascript">export PATH=$PATH:/caminho/da/sua/pasta</pre> 
+        desta forma qualquer scrip ou binario anexado neste repositorio será capaz de ser chamado como um camoando qualquer do terminal.</p>
+
+</body>
+</html>

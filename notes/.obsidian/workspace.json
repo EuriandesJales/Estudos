@@ -1,0 +1,185 @@
+{
+  "main": {
+    "id": "dde606d516d41f06",
+    "type": "split",
+    "children": [
+      {
+        "id": "218508c8094610f8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc2fcf04a4d04e4b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nova aba"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "94b621fcde240e4b",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc4b053266605be1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b288a89ebd4bf2b7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "e2ce713429e56739",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "26c5614236c40b43",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "e528c33933def4ec",
+    "type": "split",
+    "children": [
+      {
+        "id": "65181ff9373c30d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "316a0ac337807d2c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Uv Python.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Uv Python"
+            }
+          },
+          {
+            "id": "a434ad54db43dff0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Uv Python.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Uv Python"
+            }
+          },
+          {
+            "id": "842bd63ef574ec72",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "36a466976ea27850",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Uv Python.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Uv Python"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "fc2fcf04a4d04e4b",
+  "lastOpenFiles": [
+    "git.md",
+    "Bash script command.md",
+    "Obsidian Glossário.md",
+    "curso-html5-css.md.md",
+    "ytb.md",
+    "Flatpack AppImage Snap.md",
+    "Flatseal.md",
+    "Nix vs Flatpack.md",
+    "Uv Python.md",
+    "Nix 🧊.md",
+    "Curso em Vídeo HTML5 e CSS.md",
+    "README.md",
+    "UV Python.md",
+    "Não confirmado 956529.crdownload"
+  ]
+}

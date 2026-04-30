@@ -1,0 +1,57 @@
+#version: '3.8'  # Versão da sintaxe do Docker Compos  (Obsoleto)
+
+services:
+  # Serviço do MySQL
+  mysql:
+    image: mysql:8.0  # Usa imagem oficial do MySQL versão 8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql  # Volume para persistência dos dados do banco
+    networks:
+      - backend  # Apenas na rede interna, sem exposição externa
+    expose:
+      - "3306"   # Torna a porta visível para outros serviços na rede Docker, mas não para o host
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Serviço do WordPress
+  wordpress:
+    image: wordpress:apache  # Usa imagem oficial do WordPress com Apache embutido
+    container_name: wordpress
+    depends_on:
+      mysql:
+        condition: service_healthy  # Aguarda MySQL estar pronto
+    restart: always          # Reinicia o contêiner automaticamente em caso de falha
+    ports:
+      - "8080:80"            # Mapeia a porta 80 do contêiner para a porta 8080 do host
+                             # Isso permite acesso via http://localhost:8080
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      # As variáveis são carregadas do arquivo .env
+    volumes:
+      - wordpress_data:/var/www/html  # Volume para persistência dos dados do WordPress
+    networks:
+      - frontend  # Conecta à rede que pode ser acessada externamente
+      - backend   # Também se conecta à rede interna com o banco de dados
+
+
+# Define duas redes Docker
+networks:
+  frontend:    # Rede usada pelo WordPress para se comunicar com o mundo externo
+  backend:     # Rede privada usada apenas entre o WordPress e o MySQL
+
+# Define volumes persistentes
+volumes:
+  wordpress_data:  # Armazena arquivos do WordPress (plugins, uploads etc)
+  mysql_data:      # Armazena dados do banco (tabelas, configs etc)

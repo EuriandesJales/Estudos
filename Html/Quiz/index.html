@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Programação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../Imagens/quiz-logo.ico" type="image/x-icon">
+    <meta name="description" content="Quiz interativo de programação" keywords="Quiz, Programação, Desenvolvimento, Front-end, Back-end"> <!-- name="descriotion" content="especifica o conteudo da pagina" keywords="lista de palavras chaves separadas por ," -->
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Quiz Para Programadores</h1>
+            <img src="../Imagens/quiz baner header.png" alt="Logo do Quiz" class="logo">
+        </div>
+        <h2>Teste seus conhecimentos em imformatica</h2>
+        <!--Menu do cabelalho-->
+        <nav>
+            <ul>
+                <li><a target="_self" href="../"><button>Início</button></a></li>
+                <li><a target="_blank" href="../Material_Apoio/"><button>Material de Apoio</button></a></li>
+                <li><a target="_blank" href="https://github.com/gustavoguanabara/html-css"><button>Gustavo Guanabara Github</button></a></li>
+                <li><a target="_blank" href="https://github.com/EuriandesJales/EuriandesJales"><button>Outros Projetos</button></a></li>
+                <li><a href="#"><button>Contato</button></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section> <!-- Breve Apesentação-->
+            <h2>Sobre esse Quiz</h2>
+            <p>Foi feito para praticar, testar o funcionamento de formularios, suas diferentes forma, funcionalidades além de servir como <strong>Prova e Lembrete</strong> dos conhecimentos adquiridos até aqui em <abbr title="HyperText Markup Language">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr>...
+            <img style="width: 32px;" src="../Imagens/CSS3_and_HTML5_logos.png" alt="">
+            </p>
+        </section>
+        <section><!--Pergunta 1 type radio-->
+            
+                <h2>Qual é a linguagem usada para estruturar paginas Web?</h2>
+                <form> <!-- Formulario tag que indica uso de formulario -->
+                    <input type="radio" name="linguagem" id="p1a"> <!--radion pergunta de marcar-->
+                    <label for="p1a">CSS</label>
+                    <input type="radio" name="linguagem" id="p1b">
+                    <label for="p1b">Python</label>
+                    <input type="radio" name="linguagem" id="p1c">
+                    <label for="p1c">Java</label>
+                    <input type="radio" name="linguagem" id="p1d">
+                    <label for="p1d">HTML</label>
+                </form>
+        </section>
+        <section><!-- Pergunta 2 type text-->
+            
+             <h2>Qual é a função do <abbr title="Domain Name System – Sistema de nome de domínio">DNS</abbr> na internet?</h2>
+             <form>
+                <input type="text" id="p2" placeholder="Digite sua resposta">
+             </form>
+        </section>
+        <section> <!--Pergunta 3 type password-->
+            <h2>Escreva um exemplo de senha forte</h2>
+            <form>
+                <input type=""password id="p3" placeholder="Digite uma senha">
+            </form>
+        </section>
+        <section> <!--Pergunta 4 type date-->
+            <h2>Em que Ano foi criado a Arpanet?</h2>
+            <form>
+                <input type="date" id="p4" name="data">
+        </section>
+        <section> <!--Pergunta 5 type checkbox-->
+            <h2>Quais afirmações são corretas?</h2>
+            <form>
+                <input type="checkbox" id="p5a">
+                <label for="p5a">HTML é uma linguagem de marcação</label>
+                <input type="checkbox" id="p5b">
+                <label for="p5b">CSS é uma linguagem de programação</label>
+                <input type="checkbox" id="p5c">
+                <label for="p5c">JavaScript é uma linguagem de programação</label>
+                <input type="checkbox" id="p5d">
+                <label for="p5d">Python é uma linguagem de programação</label>
+            </form>
+        </section>
+        <section> <!--pergunta 6 uplood de arquivo-->
+            <h2>Faça um Documento <abbr title="HyperText Markup">HTML</abbr> com a estrutura de codigo Padão e envie</h2>
+            <form>
+                <input type="file" name="pergunta6" id="p6">
+            </form>
+        </section>
+        <section> <!--pegunta 7 menu suspenso-->
+            <h2>Qual é o atributo que define o tipo de input?</h2>
+            <form>
+                <select name="pergunta7" id="pergunta7">
+                    <option value="id">id</option>
+                    <option value="type">type</option>
+                    <option value="name">name</option>
+                    <option value="value">value</option>
+                </select>
+            </form>
+        </section>
+        <section> <!--pergunta 8-->
+            <h2>Qual é essa linguagme de programação</h2>
+            <figure>
+                <img class="logo_linguagem" src="../Imagens/Logo_Python.webp" alt="Logo_Python">
+                <figcaption>logo de uma linguagem de programação</figcaption>                
+            </figure>
+            <input type="text" placeholder="digite sua resposta">
+        </section>
+        <section> <!-- Tabela de Respostas-->
+            <h2>Tabela de respostas</h2>
+            <table border="1">
+                <thead>
+                    <th>Potuação</th>
+                    <th>Avaliação</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>0-2</td>
+                        <td>Você precisa estudar mais</td>
+                    </tr>
+                    <tr>
+                        <td>3-5</td>
+                        <td>Você está no caminho certo</td>
+                    </tr>
+                    <tr>
+                        <td>6-8</td>
+                        <td>Parabéns você é um programador</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </section>
+        <section> <!--Lista Gabarito-->
+            <h2>Gabarito</h2>
+            <details>
+                <summary>Click aqui para saber as respostas</summary>
+                <ol>
+                    <li>HTML</li>
+                    <li>Traduzindo para o português Sistema de Nome de Domínio</li>
+                    <li>Uma senha com letras maiúsculas, minúsculas, números e caracteres especiais</li>
+                    <li>1969</li>
+                    <li>HTML é uma linguagem de marcação, JavaScript é uma linguagem de programação</li>
+                    <li>Arquivo HTML</li>
+                    <li>type</li>
+                    <li>Python</li>
+                </ol>
+            </details>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

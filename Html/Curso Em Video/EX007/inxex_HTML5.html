@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantica x forma</title>
+    <link rel="shortcut icon" href="../Imagens/Graphics-Vibe-Developer-Html-5.ico" type="image/x-icon">
+    <style> /* esse comando cria um "bloco " que devera ser interpretado como um arquivo css dentro de um arquivo de HTML não é o recomendado porém é funcional para pequenos exercicios ou coisas realmente simples*/
+        body{
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .titulo{
+            font-size: 36px;
+            color: blueviolet;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .bloco_titulo{
+            width: 100%;
+            height: 80px;
+            background-color: #f1f1f1;
+            border: 2px solid #0396ff;
+            text-align: center;
+        }
+        .bloco_text_esquerda {
+            width: 30%;
+            height: 30%;
+            background-color: white;
+            color: black;
+            border: 2px solid #0396ff;
+            font-size: 16px;
+            position: relative;
+            left: 40px;
+            top: 10px
+}
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        .code {
+            background: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bloco_titulo">
+            <h1 class="titulo">Semantica x Conteudo</h1>
+        </div>
+    </header>
+    <div class="bloco_text_esquerda">
+            <h1>Diferenças entre HTML, CSS e Semântica</h1>
+        <main>
+            <section>
+                <h2>1. HTML (HyperText Markup Language)</h2>
+                <p>O HTML é a linguagem de marcação usada para estruturar o conteúdo de uma página web. Ele define a hierarquia e o significado dos elementos no documento.</p>
+                <h3>Características:</h3>
+                <ul>
+                    <li>Cria a estrutura básica da página.</li>
+                    <li>Usa tags para definir cabeçalhos, parágrafos, listas, links, imagens, etc.</li>
+                    <li>Não possui estilo visual (cores, fontes, layout).</li>
+                </ul>
+                <h3>Exemplo de código:</h3>
+                <div class="code">
+                    &lt;h1&gt;Título da Página&lt;/h1&gt;<br>
+                    &lt;p&gt;Este é um parágrafo em HTML.&lt;/p&gt;
+                    Tags de textoss como &lt;u&gt; sublinhasr, &lt;b&gt; negrito &lt;i&gt; italico, porém que fique claro a usar essas tags html se chega ao proposito visual porém não semantico, para mecanismo de buscas ainda é claro o teor do seu site.
+                </div>
+            </section>
+        </div>
+    <br>
+    <div class="bloco_text_esquerda">
+            <section>
+                <h2>2. CSS (Cascading Style Sheets)</h2>
+                <p>O CSS é usado para estilizar a página web, controlando cores, fontes, tamanhos e o layout de forma geral.</p>
+                <h3>Características:</h3>
+                <ul>
+                    <li>Controla o design visual da página.</li>
+                    <li>Trabalha separado do HTML, mantendo a estrutura e o estilo desacoplados.</li>
+                    <li>Suporta responsividade, adaptando o layout para diferentes dispositivos.</li>
+                </ul>
+                <h3>Exemplo de código:</h3>
+                <div class="code">
+                    body {<br>
+                    &nbsp;&nbsp;background-color: #f4f4f9;<br>
+                    &nbsp;&nbsp;color: #333;<br>
+                    }
+                    .negrito {
+                        font-weight: bold;
+                    }
+                    .italico {
+                        font-style: italic;
+                    }
+                    .sublinhado {
+                        text-decoration: underline;
+                    }
+                    
+                </div>
+            </section>
+    </div>
+    <br>
+    <div class="bloco_text_esquerda">
+            <section>
+                <h2>3. Semântica no HTML</h2>
+                <p>HTML semântico utiliza tags que descrevem claramente o conteúdo, melhorando a acessibilidade e SEO (otimização para motores de busca).</p>
+                <h3>Características:</h3>
+                <ul>
+                    <li>Ajuda mecaTnismos de busca a entenderem a hierarquia e o conteúdo da página.</li>
+                    <li>Melhora a acessibilidade para leitores de tela.</li>
+                    <li>Torna o código mais organizado e fácil de manter.</li>
+                </ul>
+                <h3>Exemplo de tags semânticas:</h3>
+                <ul>
+                    <li>&lt;header&gt;: Cabeçalho da página ou seção.</li>
+                    <li>&lt;nav&gt;: Menu de navegação.</li>
+                    <li>&lt;article&gt;: Conteúdo independente, como post de blog.</li>
+                    <li>&lt;section&gt;: Seção de conteúdo relacionada.</li>
+                    <li>&lt;footer&gt;: Rodapé da página.</li>
+                    <div class="code">
+                        &lt;strong&gt; : Que  seria o Bold porém com significado semantico não apenas estetico
+                        &lt;em&gt; para ênfase ou expressão emocional.
+                        Use &lt;u&gt; só quando for nome próprio ou termo especial.
+                    </div>
+                
+                </ul>
+            </section>
+        
+        </main>
+        </div>
+    </div>
+
+    
+</body>
+</html>
