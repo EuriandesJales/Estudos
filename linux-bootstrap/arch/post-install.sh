@@ -96,7 +96,9 @@ pacotes_pacman=(
     "python"            # Python 3 (em Arch, 'python' já é Python 3; não instale 'python3' separado)
     "python-pip"        # Gerenciador de pacotes pip para Python
     "uv"                # Gerenciador de ambientes/projetos Python moderno e ultrarrápido (Rust)
-
+    "docker"            # Plataforma de containerização para desenvolvimento e deploy de aplicações
+    "docker-compose"    # Ferramenta para definir e rodar aplicações Docker multi-container
+    "docker-buildx"     # Extensão do Docker para builds avançados (multi-arch, cache, etc.)
     # ── Shell e terminal ─────────────────────────────────────────────────────
     "zsh"               # Shell avançado com autocomplete, temas (Oh My Zsh etc.)
     "tmux"              # Multiplexador de terminal: múltiplas sessões em uma janela
@@ -376,6 +378,29 @@ configuracoes_pos_install() {
         || warn "Não foi possível carregar vboxdrv. Reinicie o sistema."
 
     log "Configurações aplicadas."
+    
+# ── Configurações do Docker ──────────────────────────────────────────────
+    
+    # Crinando e configurando grupo docker
+    if getent group docker &>/dev/null; then
+        log "Grupo 'docker' já existe."
+    else
+        sudo groupadd docker
+        log "Grupo 'docker' criado."
+        sudo usermod -aG docker $USER
+        log "Usuário adicionado ao grupo 'docker'. Faça logout e login para usar o Docker sem sudo."
+        newgrp docker # Aplica o novo grupo na sessão atual sem precisar de logout/login
+    fi
+
+    # Configurando daemon do Docker para iniciar com o sistema
+    if systemctl is-enabled docker &>/dev/null; then
+        log "Docker já está habilitado para iniciar com o sistema."
+    else
+        sudo systemctl enable --now docker.service
+        sudo systemctl enable docker.service
+        log "Docker habilitado para iniciar com o sistema e iniciado agora."
+    fi
+
 }
 
 # ==============================================================================

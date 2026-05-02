@@ -1,18 +1,18 @@
 # 1. Ignora tudo dentro da pasta .obsidian por padrão
-.obsidian/*
+./studies/.obsidian/*
 
 # 2. Abre exceções para arquivos de configuração de interface
-!.obsidian/app.json
-!.obsidian/appearance.json
-!.obsidian/plugins.json
-!.obsidian/core-plugins.json
-!.obsidian/community-plugins.json
+!./studies/.obsidian/app.json
+!./studies/.obsidian/appearance.json
+!./studies/.obsidian/plugins.json
+!./studies/.obsidian/core-plugins.json
+!./studies/.obsidian/community-plugins.json
 
 # 3. Permite a pasta de plugins, mas IGNORA os arquivos de dados sensíveis
-!.obsidian/plugins/
-.obsidian/plugins/**/data.json
+!./studies/.obsidian/plugins/
+./studies/.obsidian/plugins/**/data.json
 
 # 4. Garante que caches e estados de interface nunca sejam subidos
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/cache/
+./studies/.obsidian/workspace.json
+./studies/.obsidian/workspace-mobile.json
+./studies/.obsidian/cache/
