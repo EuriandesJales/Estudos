@@ -8,4 +8,8 @@ Scripts de automação focados em hardening e instalação de ferramentas de seg
 *   **Criptografia:** Setup de `gpg` para assinatura e cifrage.
 *   **Monitoramento:** Integração futura com `Wazuh` (Roadmap).
 
-> **Nota:** Projeto em desenvolvimento (Work In Progress).
+### Notas
+
+> **Notas:** Projeto em desenvolvimento (Work In Progress). <br>
+
+> **Aviso:** OS scripts arch.sh e debian.sh já foram testado, já  o security-suite.sh (união de ambos) está em desenvolvimento.
