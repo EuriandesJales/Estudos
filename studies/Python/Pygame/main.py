@@ -1,10 +1,13 @@
 import pygame
+from pathlib import Path
 #from random import randint
 #from time import sleep
 import sys
 from func import mover_personagem  # Importando a função diretamente do arquivo func.py
 from func import centralizar_imagem
 
+
+#print(pygame.image.get_extended())
 # Variáveis Globais
 rodando = True
 
@@ -16,6 +19,14 @@ Largura_Tela = 1040
 Altura_Tela = 900
 tela = pygame.display.set_mode((Largura_Tela, Altura_Tela))  # Criando a tela
 
+#----Configurando os caminhos -----
+
+# Backgraud
+BASE_DIR = Path(__file__).resolve().parent # Obtém o diretório base do arquivo atual
+fundo_path = BASE_DIR / "Assets" / "Arena01.bmp" # Construindo o caminho completo para a imagem
+# Personagem
+img_path_char = BASE_DIR / "Assets" / "char01.bmp" # Construindo o caminho completo para a imagem do personagem
+personagem = pygame.image.load(str(img_path_char)) # Carregando a imagem do personagem usando o caminho completo    
 
 
 # Definindo título da janela
@@ -24,11 +35,11 @@ pygame.display.set_caption("A Aventura da Fran")
 # Definindo a cor de fundo
 COR_FUNDO = (0, 0, 0)  # Cor preta
 #carregando uma imagem para ser usada no fundo
-fundo = pygame.image.load("Python/Mygame/Assets/Arena01.jpg")
+fundo = pygame.image.load(str(fundo_path)) # Carregando a imagem de fundo usando o caminho completo
 fundo_rect = fundo.get_rect(center=(Largura_Tela // 2, Altura_Tela // 2))
 #---------------------------------------------
 #carregando uma imagem para ser usada no personagem
-personagem = pygame.image.load("Python/Mygame/Assets/char01.png")
+personagem = pygame.image.load(str(img_path_char))
 personagem = pygame.transform.scale(personagem, (40, 40))
 personagem_rect = personagem.get_rect(center=fundo_rect.center)
 velocidade = 5 # velocidade de movimento do personagem

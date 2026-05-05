@@ -2,7 +2,7 @@
 
 # ==============================================================================
 #  PÓS-INSTALAÇÃO — CachyOS / Arch Linux
-#  Autor: você mesmo :)
+#  Autor: Euriandes jales
 #  Descrição: Instala e configura automaticamente o ambiente completo após
 #             uma instalação limpa do CachyOS ou qualquer derivado Arch.
 #
@@ -95,7 +95,7 @@ pacotes_pacman=(
     # ── Ferramentas de desenvolvimento ──────────────────────────────────────
     "python"            # Python 3 (em Arch, 'python' já é Python 3; não instale 'python3' separado)
     "python-pip"        # Gerenciador de pacotes pip para Python
-    "uv"                # Gerenciador de ambientes/projetos Python moderno e ultrarrápido (Rust)
+    #"uv"                # Gerenciador de ambientes/projetos Python moderno e ultrarrápido (Rust)
     "docker"            # Plataforma de containerização para desenvolvimento e deploy de aplicações
     "docker-compose"    # Ferramenta para definir e rodar aplicações Docker multi-container
     "docker-buildx"     # Extensão do Docker para builds avançados (multi-arch, cache, etc.)
@@ -340,6 +340,39 @@ instalar_appimages() {
     log "AppImages processados. Arquivos em: $APPIMAGE_DIR"
 }
 
+instalando_uv_tools(){
+    titulo "Instalando uv (gerenciador de ambientes Python)"
+    curl -Ls https://uv.link/install.sh | sh
+    
+    if ! command -v uv &>/dev/null; then
+    log "Erro: uv não está disponível após instalação."
+    return 1
+    fi
+
+    # ── Configurando path uv ──────────────────────────────────────────────
+
+    LOCAL_BIN="$HOME/.local/bin" # variável para facilitar manutenção do path
+    LINE='export PATH="$HOME/.local/bin:$PATH"' # linha a ser adicionada ao .zshrc para persistência do PATH
+
+    # 1. Runtime (sessão atual)
+    if [[ ":$PATH:" != *":$LOCAL_BIN:"* ]]; then # Verifica se o path já está presente para evitar duplicação
+        export PATH="$LOCAL_BIN:$PATH" # Adiciona o diretório ao PATH para a sessão atual
+        log "Path '$LOCAL_BIN' adicionado ao PATH da sessão atual."
+    fi
+
+    # 2. Persistência (zsh)
+    if ! grep -qxF "$LINE" "$HOME/.zshrc" 2>/dev/null; then # Verifica se a linha já existe no .zshrc para evitar duplicação
+        echo "$LINE" >> "$HOME/.zshrc" # Adiciona a linha ao final do .zshrc para persistência
+        log "Path '$LOCAL_BIN' adicionado ao .zshrc para persistência."
+    fi
+  
+  # Instalando ferramentas Python via uv
+  uv tool install ipython # Instala o IPython, um shell interativo avançado para Python, com recursos como autocompletar, histórico de comandos e suporte a rich media. Útil para desenvolvimento e experimentação em Python.
+  uv tool install tdlr    # Instala o tldr, uma alternativa simpl
+
+}
+
+
 # ── (Alternativa) Instala o Hydra como pacote .pacman nativo do Arch ──────────
 # Mais integrado ao sistema do que AppImage. Descomente para usar.
 # instalar_hydra_pacman() {
@@ -378,7 +411,9 @@ configuracoes_pos_install() {
         || warn "Não foi possível carregar vboxdrv. Reinicie o sistema."
 
     log "Configurações aplicadas."
-    
+
+
+  
 # ── Configurações do Docker ──────────────────────────────────────────────
     
     # Crinando e configurando grupo docker
@@ -448,6 +483,9 @@ main() {
     # 7. Configurações finais (grupos, módulos)
     configuracoes_pos_install
 
+    # 8. (Opcional) Instalação do uv e ferramentas Python via uv
+    instalando_uv_tools
+
     # ── Sumário final ─────────────────────────────────────────────────────────
     titulo "✅ Instalação Concluída!"
     echo ""
@@ -466,6 +504,8 @@ main() {
     echo -e "  ${YELLOW}►${NC} ${BOLD}VirtualBox${NC}: Você foi adicionado ao grupo vboxusers."
     echo -e "    Faça logout e login para que o grupo seja reconhecido."
     echo ""
+    echo -e "  ${YELLOW}►${NC} ${BOLD}Docker${NC}: Você foi adicionado ao grupo docker e o serviço foi habilitado."
+    echo -e "uv Ferramentas Python (IPython, tldr) estão disponíveis via 'uv tool list' e podem ser usadas com 'uv run <ferramenta>'."
 }
 
 # Chama a função principal passando todos os argumentos recebidos pelo script

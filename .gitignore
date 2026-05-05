@@ -16,3 +16,9 @@
 ./studies/.obsidian/workspace.json
 ./studies/.obsidian/workspace-mobile.json
 ./studies/.obsidian/cache/
+
+# ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
