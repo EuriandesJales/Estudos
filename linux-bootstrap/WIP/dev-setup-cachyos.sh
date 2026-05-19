@@ -189,12 +189,14 @@ verificar_sistema() {
 # ──────────────────────────────────────────────────────────────────────────────
 
 # Pacotes divididos em grupos temáticos para facilitar manutenção
+
 readonly -a PKGS_BASE=(
     git           # VCS — obrigatório para clonar plugins e repositórios
     curl          # Transferências HTTP — usado por instaladores (rustup, etc.)
     wget          # Downloader alternativo — alguns scripts preferem wget
     unzip         # Extração de .zip (fontes, binários)
     tar           # Extração de tarballs
+    7z            # Extração de arquivos .7z (alguns releases usam esse formato)
     make          # Build system — necessário para compilar muitos plugins
     base-devel    # Meta-pacote: gcc, binutils, fakeroot — base para AUR e compilação
     pkg-config    # Permite ao compilador localizar libs instaladas no sistema
@@ -203,6 +205,7 @@ readonly -a PKGS_BASE=(
 readonly -a PKGS_SHELL=(
     zsh                       # Shell principal do ambiente
     tmux                      # Multiplexador de terminal
+    byobu                     # Wrapper do tmux, com teclas de atalhos mais intuitivas (opcional, mas recomendado)
     fontconfig                # Gerenciamento de fontes (necessário para fc-cache)
     fastfetch                 # Exibição de informações do sistema (substituto ao neofetch)
     fzf                       # Fuzzy finder — integrado ao Zsh e Tmux
@@ -213,6 +216,10 @@ readonly -a PKGS_SHELL=(
     zoxide                    # Navegação inteligente de diretórios (substituto ao cd)
     bat                       # Cat com syntax highlighting
     eza                       # ls moderno com ícones e cores
+    etckeeper                 # Versionamento do /etc (útil para sysadmins e devops)
+    figlet                    # Gerador de texto ASCII (usado para banners divertidos no terminal
+    lolcat                    # Exibe texto com cores aleatórias (divertido para banners e mensagens de erro)
+
 )
 
 readonly -a PKGS_DEV=(
@@ -451,6 +458,29 @@ setup_python_tools() {
     fi
 
     $modulo_ok && _registrar_resultado "Ferramentas Python" 0 || _registrar_resultado "Ferramentas Python" 1
+}
+# ──────────────────────────────────────────────────────────────────────────────
+# Lunavim
+# ──────────────────────────────────────────────────────────────────────────────
+instalar_lunarvim() {
+  
+    titulo "Instalando LunarVim"
+
+    if command -v lvim &>/dev/null; then
+        warn "LunarVim já instalado. Pulando."
+        return
+    fi
+
+    log "Iniciando instalador oficial (contornando PEP 668)..."
+    
+    # Exportamos a variável para que todos os processos filhos do bash vejam
+    export PIP_BREAK_SYSTEM_PACKAGES=1
+    
+    LV_BRANCH='release-1.3/neovim-0.9' \
+        bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --yes
+    
+    # Desativa após a instalação por segurança
+    unset PIP_BREAK_SYSTEM_PACKAGES
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -869,6 +899,7 @@ main() {
     install_aur_packages   # yay: VS Code e outros pacotes AUR
     setup_rust             # rustup: toolchain Rust
     setup_python_tools     # uv: ferramentas Python isoladas
+    instalar_lunarvim      # LunarVim
     setup_docker           # Docker + systemd + grupo
     configure_services     # PostgreSQL + Metasploit
     instalar_fontes        # MesloLGS NF para Powerlevel10k
