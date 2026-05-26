@@ -63,7 +63,7 @@ instalar_dependencias() {
         tar \
         make \
         gcc \
-        build-essential \
+        build-essential \ 
         fontconfig \
         neofetch \
         tmux \
@@ -71,12 +71,12 @@ instalar_dependencias() {
         python3-pip \
         npm \
         nodejs \
-        ripgrep \
+        ripgrep 
         fd-find \
         fzf \
-        xclip \
+        xclip \ #
         luarocks \
-        cmake \
+        cmake \ # 
         libfuse2 \
         gettext \
         python3-full \
