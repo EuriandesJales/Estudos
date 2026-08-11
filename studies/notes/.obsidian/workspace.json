@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "032a753071d34c76",
+        "id": "1812a90041089791",
         "type": "tabs",
         "children": [
           {
-            "id": "0af68ff7035e46ae",
+            "id": "c9011917f71fd300",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "IPV4.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "IPV4"
+              "title": "Nova aba"
             }
           }
         ]
@@ -169,12 +165,20 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "0af68ff7035e46ae",
+  "active": "c9011917f71fd300",
   "lastOpenFiles": [
+    "CCNA.md",
+    "Pasted image 20260712230257.png",
+    "Imagens/VLSM.png",
+    "Imagens/packat ipv4.png",
+    "Imagens/ipv4 packat.png",
+    "Imagens/packt udp.png",
+    "Imagens/Tcp packat.png",
+    "Imagens/osi x tcp ip.png",
+    "IPV4.md",
     "Resumos Ia/packttracer in distrobox.md",
     "Resumos Ia/Distrobox podman (erro montar container).md",
     "DHCP.md",
-    "IPV4.md",
     "Resumos Ia/Cronogram.md",
     "Atalhos lvim, tmux, zsh.md",
     "Resumos Ia/Fix Limine and BTRFS SNAPSHOTS.md",
@@ -198,23 +202,14 @@
     "Flatseal.md",
     "Flatpack AppImage Snap.md",
     "curso-html5-css.md",
-    "Pasted image 20260507004741.png",
-    "Imagens/faixas de endereços de rede logica.png",
-    "Imagens/máscara-CIDR.png",
     "copilot/copilot-custom-prompts/Translate to Chinese.md",
     "copilot/copilot-custom-prompts/Summarize.md",
-    "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
     "Livros/LPI Linux Pro.pdf",
     "Livros/guia_lgpd.pdf",
     "pyproject.toml",
     "main.py",
     "copilot/copilot-custom-prompts",
     "copilot",
-    "Imagens/useradd -h.png",
-    "Imagens/usermod_command.png.png",
-    "Pasted image 20260501124438.png",
-    "Imagens/url.png",
     "Sem título.base",
     "Sem título 1.base"
   ]
